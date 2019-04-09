@@ -5,9 +5,9 @@
 
 
     def initialize(size_in_string)
-    	size = size_in_string.split
-        @x_max = size[0].to_i
-        @y_max = size[1].to_i
+      size = size_in_string.split
+      @x_max = size[0].to_i
+      @y_max = size[1].to_i
     end
 
   end
@@ -30,18 +30,18 @@
 
 
     def get_current_direction
-    	get_string_direction
+      get_string_direction
     end
 
 
     def get_numerical_direction_for( direction )
   	
-  	 case direction 
-  	 when "N" then 1
-     when "E" then 2
-     when "S" then 3
-     when "W" then 4
-     end
+  	  case direction 
+  	  when "N" then 1
+      when "E" then 2
+      when "S" then 3
+      when "W" then 4
+      end
   
     end
 
@@ -58,8 +58,8 @@
     end
 
     def turn_right
-  	 @current_direction += 1 
-  	 @current_direction = 1 if @current_direction > 4
+  	  @current_direction += 1
+  	  @current_direction = 1 if @current_direction > 4
     end
   
   
@@ -77,11 +77,11 @@
 
 
   	def initialize(x, y, direction, path, plateau)
-  		@current_x = x
-  		@current_y = y
-  		@direction = Direction.new(direction)
-  		@movements = path
-  		@plateau = plateau
+  	  @current_x = x
+  	  @current_y = y
+  	  @direction = Direction.new(direction)
+  	  @movements = path
+  	  @plateau = plateau
   	end
 
 
@@ -105,19 +105,19 @@
 
 
     def increment(direction, maxSize) 
-    	return direction += 1
-    	return 1 if direction > maxSize
+      return direction += 1
+      return 1 if direction > maxSize
     end
    
 
     def decrement(direction, maxSize) 
-    	return direction -= 1
-    	return maxSize if direction < 0
+      return direction -= 1
+      return maxSize if direction < 0
     end
 
 
     def rover_direction
-    	direction.get_current_direction
+      direction.get_current_direction
     end
 
   end
